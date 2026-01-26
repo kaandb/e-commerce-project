@@ -51,7 +51,7 @@ export const sliderItems = [
   {
     image: slide2, 
     subtitle: "WINTER 2020",
-    title: "VITA CLASSIC",
+    title: "NEW COLLECTION",
     description: "We know how large objects will act, but things on a small scale.",
     buttonText: "SHOP NOW"
   }
