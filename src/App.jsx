@@ -4,6 +4,9 @@ import Header from './layout/Header';
 import PageContent from './layout/PageContent';
 import Footer from './layout/Footer';
 import HomePage from './pages/HomePage';
+import ShopPage from './pages/ShopPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import ContactPage from './pages/ContactPage'; 
 
 function App() {
   return (
@@ -14,6 +17,23 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
+          
+          <Route path="/shop" exact>
+            <ShopPage />
+          </Route>
+          
+          <Route path="/product/:productId">
+            <ProductDetailPage />
+          </Route>
+          
+          <Route path="/product" exact>
+            <ProductDetailPage />
+          </Route>
+
+          <Route path="/contact" exact>
+            <ContactPage />
+          </Route>
+
         </Switch>
       </PageContent>
       <Footer />

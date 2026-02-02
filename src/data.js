@@ -17,6 +17,18 @@ import neural1 from "./assets/neural1.png";
 import featured1 from "./assets/featured1.jpg";
 import featured2 from "./assets/featured2.jpg";
 import featured3 from "./assets/featured3.jpg";
+import cloth1 from "./assets/cloth1.jpg";
+import cloth2 from "./assets/cloth2.jpg";
+import cloth3 from "./assets/cloth3.jpg";
+import cloth4 from "./assets/cloth4.jpg";
+import cloth5 from "./assets/cloth5.jpg";
+import hooli from "./assets/brands/hooli.svg";
+import lyft from "./assets/brands/lyft.svg";
+import piedPiper from "./assets/brands/pied-piper.svg";
+import stripe from "./assets/brands/stripe.svg";
+import aws from "./assets/brands/aws.svg";
+import reddit from "./assets/brands/reddit.svg";
+import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
 
 export const navLinks = [
     { path: "/", label: "Home" },
@@ -199,3 +211,68 @@ export const featuredPosts = [
     link: "#"
   },
 ];
+
+export const shopCategories = [
+  { id: 1, image: cloth1, title: "CLOTHS", items: 5 },
+  { id: 2, image: cloth2, title: "CLOTHS", items: 5 },
+  { id: 3, image: cloth3, title: "CLOTHS", items: 5 },
+  { id: 4, image: cloth4, title: "CLOTHS", items: 5 },
+  { id: 5, image: cloth5, title: "CLOTHS", items: 5 },
+];
+
+export const shopProducts = [
+  ...bestsellerProducts, 
+  { id: 9, image: ep1, title: "Graphic Design", department: "English Department", originalPrice: "$16.48", salePrice: "$6.48", colors: ["#23A6F0", "#23856D", "#E77C40", "#252B42"] },
+  { id: 10, image: ep2, title: "Graphic Design", department: "English Department", originalPrice: "$16.48", salePrice: "$6.48", colors: ["#23A6F0", "#23856D", "#E77C40", "#252B42"] },
+  { id: 11, image: ep3, title: "Graphic Design", department: "English Department", originalPrice: "$16.48", salePrice: "$6.48", colors: ["#23A6F0", "#23856D", "#E77C40", "#252B42"] },
+  { id: 12, image: ep4, title: "Graphic Design", department: "English Department", originalPrice: "$16.48", salePrice: "$6.48", colors: ["#23A6F0", "#23856D", "#E77C40", "#252B42"] },
+];
+
+export const brandLogos = [
+  { id: 1, image: hooli, alt: "Hooli" },
+  { id: 2, image: lyft, alt: "Lyft" },
+  { id: 3, image: piedPiper, alt: "Pied Piper" },
+  { id: 4, image: stripe, alt: "Stripe" },
+  { id: 5, image: aws, alt: "AWS" },
+  { id: 6, image: reddit, alt: "Reddit" },
+];
+
+export const singleProduct = {
+  id: 1,
+  title: "Floating Phone",
+  rating: 4.5,
+  reviews: 10,
+  price: "$1,139.33",
+  availability: "In Stock",
+  description: "Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.",
+  colors: ["#23A6F0", "#2DC071", "#E77C40", "#252B42"],
+  images: [ep1, ep2], 
+};
+
+export const productDescription = {
+    image: ep3, 
+    textContent: `Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.
+    
+    Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.
+    
+    Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.`,
+    listTitle: "the quick fox jumps over",
+    listItems: [
+        "the quick fox jumps over the lazy dog",
+        "the quick fox jumps over the lazy dog",
+        "the quick fox jumps over the lazy dog",
+        "the quick fox jumps over the lazy dog"
+    ]
+};
+
+export const contactPageData = {
+  title: "Get answers to all your questions.",
+  description: "Problems trying to resolve the conflict between the two major realms of Classical physics:",
+  buttonText: "CONTACT OUR COMPANY",
+  socials: [
+    { icon: Twitter, url: "#" },
+    { icon: Facebook, url: "#" },
+    { icon: Instagram, url: "#" },
+    { icon: Linkedin, url: "#" },
+  ],
+};
