@@ -29,6 +29,12 @@ import stripe from "./assets/brands/stripe.svg";
 import aws from "./assets/brands/aws.svg";
 import reddit from "./assets/brands/reddit.svg";
 import { Twitter, Facebook, Instagram, Linkedin } from 'lucide-react';
+import team1 from './assets/team1.jpg';
+import team2 from './assets/team2.jpg';
+import team3 from './assets/team3.jpg';
+import aboutus1 from './assets/aboutus1.png';
+import aboutus2 from './assets/aboutus2.png';
+import aboutus3 from './assets/aboutus3.png';
 
 export const navLinks = [
     { path: "/", label: "Home" },
@@ -36,6 +42,7 @@ export const navLinks = [
     { path: "/about", label: "About" },
     { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
+    { path: "/team", label: "Team" },
     { path: "/pages", label: "Pages" },
 ];
 
@@ -275,4 +282,66 @@ export const contactPageData = {
     { icon: Instagram, url: "#" },
     { icon: Linkedin, url: "#" },
   ],
+};
+
+export const teamData = [
+  {
+    id: 1,
+    image: team1,
+    username: "Username",
+    profession: "Profession",
+    socials: [
+      { icon: Facebook, url: "#" },
+      { icon: Instagram, url: "#" },
+      { icon: Twitter, url: "#" },
+    ]
+  },
+  {
+    id: 2,
+    image: team2,
+    username: "Username",
+    profession: "Profession",
+    socials: [
+      { icon: Facebook, url: "#" },
+      { icon: Instagram, url: "#" },
+      { icon: Twitter, url: "#" },
+    ]
+  },
+  {
+    id: 3,
+    image: team3,
+    username: "Username",
+    profession: "Profession",
+    socials: [
+      { icon: Facebook, url: "#" },
+      { icon: Instagram, url: "#" },
+      { icon: Twitter, url: "#" },
+    ]
+  },
+];
+
+export const aboutUsData = {
+  hero: {
+    title: "ABOUT COMPANY",
+    headline: "ABOUT US",
+    description: "We know how large objects will act, but things on a small scale",
+    buttonText: "Get Quote Now",
+    image: aboutus1
+  },
+  stats: [
+    { number: "15K", text: "Happy Customers" },
+    { number: "150K", text: "Monthly Visitors" },
+    { number: "15", text: "Countries Worldwide" },
+    { number: "100+", text: "Top Partners" },
+  ],
+  video: {
+    image: aboutus2,
+  },
+  workWithUs: {
+    title: "WORK WITH US",
+    headline: "Now Let's grow Yours",
+    description: "The gradual accumulation of information about atomic and small-scale behavior during the first quarter of the 20th",
+    buttonText: "Button",
+    image: aboutus3
+  }
 };
