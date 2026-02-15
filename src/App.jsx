@@ -4,12 +4,17 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 import { useDispatch } from 'react-redux';
 import { verifyToken } from './store/actions/clientActions';
+import { fetchCategories } from './store/actions/productActions'; 
+import { setCart } from './store/actions/shoppingCartActions';
 import Header from './layout/Header';
 import PageContent from './layout/PageContent';
 import Footer from './layout/Footer';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import ProductDetailPage from './pages/ProductDetailPage';
+import ShoppingCartPage from './pages/ShoppingCartPage';
+import CreateOrderPage from './pages/CreateOrderPage';
+import PreviousOrdersPage from './pages/PreviousOrdersPage';
 import ContactPage from './pages/ContactPage';
 import TeamPage from './pages/TeamPage';
 import AboutPage from './pages/AboutPage';
@@ -18,8 +23,26 @@ import LoginPage from './pages/LoginPage';
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(verifyToken());
+    dispatch(fetchCategories());
+    const handleStorageChange = (event) => {
+      if (event.key === "shoppingCart") {
+        try {
+          const newCart = JSON.parse(event.newValue);
+          dispatch(setCart(newCart));
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
+
   }, [dispatch]);
 
   return (
@@ -32,30 +55,38 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
+          
+          <Route path="/shop/:gender/:categoryName/:categoryId" exact>
+            <ShopPage />
+          </Route>
           <Route path="/shop" exact>
             <ShopPage />
           </Route>
-          <Route path="/product/:productId">
+          
+          <Route path="/shop/:gender/:categoryName/:categoryId/:productNameSlug/:productId" exact>
             <ProductDetailPage />
           </Route>
-          <Route path="/product" exact>
+          <Route path="/product/:productId" exact>
             <ProductDetailPage />
           </Route>
-          <Route path="/contact" exact>
-            <ContactPage />
+
+          <Route path="/cart" exact>
+             <ShoppingCartPage />
           </Route>
-          <Route path="/team" exact>
-            <TeamPage />
+
+          <Route path="/order" exact>
+             <CreateOrderPage />
           </Route>
-          <Route path="/about" exact>
-            <AboutPage />
+
+          <Route path="/previous-orders" exact>
+             <PreviousOrdersPage />
           </Route>
-          <Route path="/signup" exact>
-            <SignupPage />
-          </Route>
-          <Route path="/login" exact>
-             <LoginPage />
-          </Route>
+          
+          <Route path="/contact" exact component={ContactPage} />
+          <Route path="/team" exact component={TeamPage} />
+          <Route path="/about" exact component={AboutPage} />
+          <Route path="/signup" exact component={SignupPage} />
+          <Route path="/login" exact component={LoginPage} />
 
         </Switch>
       </PageContent>
